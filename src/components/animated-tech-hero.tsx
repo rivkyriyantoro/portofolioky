@@ -50,7 +50,7 @@ const techIcons = [
 const socialLinks = [
   { icon: FaGithub, href: "https://github.com/rivkyriyantoro", label: "GitHub" },
   { icon: FaLinkedin, href: "https://www.linkedin.com/in/rivky-riyantoro/", label: "LinkedIn" },
-  { icon: FaEnvelope, href: "mailto:rivkyriyan@gmail.com", label: "Email" }
+  { icon: FaEnvelope, href: "mailto:rivkyriyant@gmail.com", label: "Email" }
 ]
 
 export function AnimatedTechHero() {
@@ -182,7 +182,7 @@ export function AnimatedTechHero() {
           >
             Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Your Name
+              Rivky Riyantoro
             </span>
           </motion.h1>
 

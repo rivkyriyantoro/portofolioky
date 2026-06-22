@@ -9,7 +9,7 @@ export function Footer() {
   const socialLinks = [
     { icon: FaGithub, href: "https://github.com/rivkyriyantoro", label: "GitHub" },
     { icon: FaLinkedin, href: "https://www.linkedin.com/in/rivky-riyantoro/", label: "LinkedIn" },
-    { icon: FaEnvelope, href: "mailto:rivkyriyan@gmail.com", label: "Email" },
+    { icon: FaEnvelope, href: "mailto:rivkyriyant@gmail.com", label: "Email" },
   ]
 
   // const quickLinks = [
@@ -67,7 +67,7 @@ export function Footer() {
             I&apos;d love to hear from you.
           </p>
           <Button size="lg" asChild>
-            <a href="mailto:rivkyriyan@gmail.com">
+            <a href="mailto:rivkyriyant@gmail.com">
               Let&apos;s Talk
             </a>
           </Button>

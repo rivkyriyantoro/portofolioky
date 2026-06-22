@@ -2,12 +2,33 @@ import { CMSContent, WorkExperience, FeaturedProject } from "@/types/cms"
 
 export const workExperiences: WorkExperience[] = [
   {
+    id: "exp-000",
+    title: "Quality Assurance",
+    company: "Bank Sinarmas",
+    location: "Indonesia",
+    period: "January 2026 - Present",
+    isCurrentPosition: true,
+    description: "Responsible for quality assurance in banking software systems, ensuring robust and secure digital banking products through comprehensive testing strategies and quality standards.",
+    technologies: ["Postman", "Playwright", "Manual Testing", "API Testing", "JIRA", "DBeaver"],
+    achievements: [
+      "Ensured quality standards for critical banking software systems",
+      "Implemented comprehensive testing strategies for digital banking products",
+      "Collaborated with cross-functional teams to deliver secure banking solutions"
+    ],
+    responsibilities: [
+      "Manual and automated testing of banking applications",
+      "API testing and validation",
+      "Bug reporting and tracking",
+      "Test case creation and execution",
+      "Quality assurance documentation"
+    ]
+  },
+  {
     id: "exp-001",
     title: "Quality Assurance",
     company: "LAYANA.ID",
     location: "Yogyakarta, Indonesia",
     period: "August 2024 - Present",
-    isCurrentPosition: true,
     description: "Responsible for ensuring quality standards in software development processes, performing comprehensive testing of web applications and mobile applications to deliver high-quality products.",
     technologies: ["Selenium", "Postman", "TestNG", "JIRA", "Manual Testing", "API Testing", "Mobile Testing"],
     achievements: [
