@@ -182,7 +182,7 @@ export function AnimatedTechHero() {
           >
             Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Rivky Riyantoro
+              Rivky
             </span>
           </motion.h1>
 
