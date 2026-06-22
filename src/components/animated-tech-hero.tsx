@@ -2,17 +2,16 @@
 
 import React, { useEffect, useState } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { 
-  FaReact, 
-  FaNodeJs, 
-  FaPython, 
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
   FaDocker,
   FaMobile,
   FaPalette,
   FaBug,
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaEnvelope
 } from "react-icons/fa"
 import { 
@@ -51,7 +50,6 @@ const techIcons = [
 const socialLinks = [
   { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
   { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-  { icon: FaTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
   { icon: FaEnvelope, href: "mailto:your.email@example.com", label: "Email" }
 ]
 
@@ -208,13 +206,14 @@ export function AnimatedTechHero() {
           </motion.div>
 
           {/* Description */}
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto"
           >
-            I&apos;m a passionate developer with expertise in modern web technologies. 
-            I love building scalable applications and turning ideas into reality through 
-            clean, efficient code and intuitive design.
+            I bridge quality and creativity — ensuring every product works flawlessly through
+            rigorous QA testing, while crafting interfaces that are both intuitive and
+            visually compelling. From breaking bugs to building experiences, I bring precision
+            and passion to every stage of the product lifecycle.
           </motion.p>
 
           {/* Social Media Links */}
