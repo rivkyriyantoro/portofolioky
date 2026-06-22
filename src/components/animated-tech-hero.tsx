@@ -48,8 +48,8 @@ const techIcons = [
 ]
 
 const socialLinks = [
-  { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
-  { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+  { icon: FaGithub, href: "https://github.com/rivkyriyantoro", label: "GitHub" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/in/rivky-riyantoro/", label: "LinkedIn" },
   { icon: FaEnvelope, href: "mailto:your.email@example.com", label: "Email" }
 ]
 
