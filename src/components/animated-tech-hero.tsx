@@ -50,7 +50,7 @@ const techIcons = [
 const socialLinks = [
   { icon: FaGithub, href: "https://github.com/rivkyriyantoro", label: "GitHub" },
   { icon: FaLinkedin, href: "https://www.linkedin.com/in/rivky-riyantoro/", label: "LinkedIn" },
-  { icon: FaEnvelope, href: "mailto:your.email@example.com", label: "Email" }
+  { icon: FaEnvelope, href: "mailto:rivkyriyan@gmail.com", label: "Email" }
 ]
 
 export function AnimatedTechHero() {

@@ -2,15 +2,14 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com/yourusername", label: "GitHub" },
-    { icon: FaLinkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { icon: FaTwitter, href: "https://twitter.com/yourusername", label: "Twitter" },
-    { icon: FaEnvelope, href: "mailto:your.email@example.com", label: "Email" },
+    { icon: FaGithub, href: "https://github.com/rivkyriyantoro", label: "GitHub" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/rivky-riyantoro/", label: "LinkedIn" },
+    { icon: FaEnvelope, href: "mailto:rivkyriyan@gmail.com", label: "Email" },
   ]
 
   // const quickLinks = [
@@ -68,7 +67,7 @@ export function Footer() {
             I&apos;d love to hear from you.
           </p>
           <Button size="lg" asChild>
-            <a href="mailto:your.email@example.com">
+            <a href="mailto:rivkyriyan@gmail.com">
               Let&apos;s Talk
             </a>
           </Button>
