@@ -31,10 +31,10 @@ export function ChatMessage({ message }: Props) {
 
       <div className={`space-y-2 ${isBot ? "max-w-[85%]" : "max-w-[70%]"}`}>
         <div
-          className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+          className={`rounded-3xl px-4 py-3 text-[13.5px] leading-[1.65] ${
             isBot
-              ? "bg-white/8 border border-white/10 text-white/90 rounded-tl-sm"
-              : "bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-tr-sm"
+              ? "bg-white/6 text-white/85 rounded-tl-md"
+              : "bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-tr-md shadow-lg shadow-indigo-900/30"
           }`}
         >
           <FormattedText text={message.text} />

@@ -18,7 +18,7 @@ import {
 const WELCOME: ChatMessageType = {
   id: "0",
   role: "bot",
-  text: "Hey there! I'm **Rivky Riyantoro's** AI assistant 👋\n\nFeel free to ask anything — work experience, projects, skills, certifications, or how to get in touch. Pick a topic below or just type away!",
+  text: "Hey! 👋 Good to have you here.\n\nI'm Rivky's little corner of the internet — ask me anything, or just tap one of the topics below to get started!",
   timestamp: new Date(),
 }
 

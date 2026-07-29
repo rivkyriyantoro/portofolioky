@@ -82,53 +82,53 @@ export function generateResponse(intent: Intent): BotResponse {
   switch (intent) {
     case "greeting":
       return {
-        text: "Hey there! I'm **Rivky Riyantoro's** AI assistant 👋\n\nFeel free to ask anything — work experience, projects, skills, certifications, or how to get in touch. Pick a topic below or just type away!",
+        text: "Hey! 👋 Good to have you here.\n\nI'm Rivky's little corner of the internet — ask me anything, or just tap one of the topics below to get started!",
         suggestions: DEFAULT_SUGGESTIONS,
       }
     case "about":
       return {
-        text: "Rivky Riyantoro is a **Quality Assurance Engineer & Systems Analyst** based in Jakarta / Yogyakarta, Indonesia.\n\nGraduated from **Muhammadiyah University of Yogyakarta** in Information Technology with a GPA of 3.72 *(Cum Laude)*. Currently working at **Bank Sinarmas** and **LAYANA.ID** as a QA Engineer, with extensive experience in software testing, UI/UX design, and frontend development.",
+        text: "So, Rivky is a **QA Engineer & Systems Analyst** who splits time between Jakarta and Yogyakarta.\n\nGraduated *cum laude* from **Muhammadiyah University of Yogyakarta** (GPA 3.72) and has been deep in the world of software quality, UI/UX design, and frontend dev ever since. Right now actively working at **Bank Sinarmas** and **LAYANA.ID**. 🚀",
         suggestions: ["Work Experience", "Portfolio Projects", "Skills & Tools", "Download CV", "Get in Touch"],
       }
     case "experience":
       return {
-        text: "Here's an overview of Rivky's work experience:",
+        text: "Here's where Rivky has worked — quite a journey! 🗂️",
         contentType: "experiences",
         suggestions: ["Portfolio Projects", "Skills & Tools", "Download CV"],
       }
     case "projects":
       return {
-        text: "Here are the projects Rivky has worked on:",
+        text: "These are some of the things Rivky has shipped — from airline systems to IoT platforms. Take a look! 👇",
         contentType: "projects",
         suggestions: ["Work Experience", "Skills & Tools", "Download CV"],
       }
     case "skills":
       return {
-        text: "Here are the skills and tools Rivky is proficient in:",
+        text: "Here's the toolkit — testing frameworks, design tools, frontend tech and more. 🛠️",
         contentType: "skills",
         suggestions: ["Certifications", "Portfolio Projects", "Download CV"],
       }
     case "certifications":
       return {
-        text: "Here are Rivky's professional certifications:",
+        text: "A few certifications worth mentioning — BNSP certified and counting! 🏆",
         contentType: "certifications",
         suggestions: ["Skills & Tools", "Work Experience", "Download CV"],
       }
     case "contact":
       return {
-        text: "Interested in working with Rivky? Here's how to get in touch:",
+        text: "Want to collaborate or just say hi? Here's how to reach Rivky 📬",
         contentType: "contact",
         suggestions: ["About Rivky", "Portfolio Projects", "Download CV"],
       }
     case "cv":
       return {
-        text: "Rivky has tailored CVs for each role. Select the one that fits what you're looking for:",
+        text: "There's a tailored CV for each role — just pick whichever fits what you're looking for! ⬇️",
         contentType: "cv",
         suggestions: ["Work Experience", "Portfolio Projects", "Get in Touch"],
       }
     default:
       return {
-        text: "Hmm, I didn't quite catch that. Try picking a topic below or rephrase your question!",
+        text: "Hmm, not quite sure what you mean — but no worries! Try one of the topics below or rephrase it a bit 😊",
         suggestions: DEFAULT_SUGGESTIONS,
       }
   }
