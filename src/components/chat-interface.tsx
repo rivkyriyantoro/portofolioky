@@ -86,7 +86,7 @@ export function ChatInterface() {
 
         <div className="text-center">
           <h1 className="text-white font-semibold text-base leading-tight">Rivky Riyantoro</h1>
-          <p className="text-white/35 text-xs mt-0.5">QA Engineer · Frontend Dev · UI/UX Designer</p>
+          <p className="text-white/35 text-xs mt-0.5">Jakarta / Jogja, Indonesia</p>
         </div>
       </motion.div>
 
