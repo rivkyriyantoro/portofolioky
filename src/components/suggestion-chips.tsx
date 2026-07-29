@@ -12,20 +12,30 @@ export function SuggestionChips({ suggestions, onSelect }: Props) {
     <AnimatePresence>
       {suggestions.length > 0 && (
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 8 }}
-          transition={{ duration: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          exit={{ opacity: 0, y: 6 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.06 } },
+          }}
           className="flex flex-wrap gap-2"
         >
           {suggestions.map((s) => (
-            <button
+            <motion.button
               key={s}
+              variants={{
+                hidden: { opacity: 0, y: 8, scale: 0.92 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+              }}
+              transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
+              whileHover={{ scale: 1.05, y: -1 }}
+              whileTap={{ scale: 0.96 }}
               onClick={() => onSelect(s)}
-              className="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white/70 hover:bg-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all duration-200 cursor-pointer"
+              className="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/12 text-white/60 hover:bg-indigo-500/20 hover:border-indigo-500/40 hover:text-white/90 transition-colors duration-200 cursor-pointer"
             >
               {s}
-            </button>
+            </motion.button>
           ))}
         </motion.div>
       )}

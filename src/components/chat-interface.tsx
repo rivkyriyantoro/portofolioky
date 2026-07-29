@@ -22,17 +22,32 @@ const WELCOME: ChatMessageType = {
   timestamp: new Date(),
 }
 
+const PLACEHOLDERS = [
+  "Ask about Rivky's skills...",
+  "Curious about any projects?",
+  "Ask about work experience...",
+  "Want to download the CV?",
+  "How to get in touch?",
+]
+
 export function ChatInterface() {
   const [messages, setMessages] = useState<ChatMessageType[]>([WELCOME])
   const [isTyping, setIsTyping] = useState(false)
   const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS)
   const [input, setInput] = useState("")
+  const [phIndex, setPhIndex] = useState(0)
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages, isTyping])
+
+  // Rotate placeholder
+  useEffect(() => {
+    const t = setInterval(() => setPhIndex((i) => (i + 1) % PLACEHOLDERS.length), 3200)
+    return () => clearInterval(t)
+  }, [])
 
   const handleSend = async (text: string) => {
     const trimmed = text.trim()
@@ -74,9 +89,13 @@ export function ChatInterface() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="relative z-10 flex flex-col items-center gap-2 mb-4 shrink-0"
       >
-        {/* Avatar ring glow */}
         <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 blur-lg opacity-50 scale-110" />
+          {/* Breathing glow */}
+          <motion.div
+            className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 blur-xl"
+            animate={{ scale: [1.1, 1.5, 1.1], opacity: [0.45, 0.2, 0.45] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+          />
           <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-[2px] shadow-2xl">
             <div className="w-full h-full rounded-full bg-[#07070e] flex items-center justify-center">
               <span className="text-white font-bold text-xl tracking-tight">RR</span>
@@ -96,16 +115,22 @@ export function ChatInterface() {
         </div>
       </motion.div>
 
-      {/* Chat window */}
+      {/* Chat window — no hard border, just shadow + blur */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
-        className="relative z-10 w-full max-w-2xl flex-1 flex flex-col min-h-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-        style={{ background: "rgba(10, 10, 20, 0.65)", backdropFilter: "blur(24px)" }}
+        className="relative z-10 w-full max-w-2xl flex-1 flex flex-col min-h-0 rounded-3xl overflow-hidden shadow-[0_8px_60px_rgba(99,102,241,0.1),0_0_0_1px_rgba(255,255,255,0.06)]"
+        style={{ background: "rgba(8, 8, 20, 0.7)", backdropFilter: "blur(28px)" }}
       >
-        {/* Messages area */}
-        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 scrollbar-thin">
+        {/* Messages with top + bottom fade mask */}
+        <div
+          className="flex-1 overflow-y-auto px-4 py-5 space-y-4 scrollbar-thin"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 7%, black 93%, transparent 100%)",
+          }}
+        >
           <AnimatePresence initial={false}>
             {messages.map((msg) => (
               <ChatMessage key={msg.id} message={msg} />
@@ -115,28 +140,51 @@ export function ChatInterface() {
           <div ref={bottomRef} />
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-white/8 shrink-0" />
+        <div className="h-px bg-white/[0.06] shrink-0" />
 
         {/* Input area */}
         <div className="px-4 pt-3 pb-4 space-y-2.5 shrink-0">
           <SuggestionChips suggestions={suggestions} onSelect={handleSend} />
+
           <div className="flex gap-2">
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
-              placeholder="Ask something about Rivky..."
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-all"
-            />
-            <button
+            {/* Animated placeholder input */}
+            <div className="relative flex-1">
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
+                placeholder=""
+                className="w-full bg-white/[0.05] border border-white/[0.08] rounded-2xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-indigo-500/50 focus:bg-white/[0.07] transition-all"
+              />
+              {/* Animated placeholder overlay */}
+              {!input && (
+                <div className="absolute inset-0 flex items-center px-4 pointer-events-none">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={phIndex}
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{ duration: 0.25 }}
+                      className="text-sm text-white/25 truncate"
+                    >
+                      {PLACEHOLDERS[phIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              )}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.93 }}
               onClick={() => handleSend(input)}
               disabled={!input.trim() || isTyping}
-              className="w-10 h-10 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-all shrink-0"
+              className="w-10 h-10 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 disabled:cursor-not-allowed rounded-2xl flex items-center justify-center transition-colors shrink-0"
             >
               <Send className="w-3.5 h-3.5 text-white" />
-            </button>
+            </motion.button>
           </div>
         </div>
       </motion.div>
