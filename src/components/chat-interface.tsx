@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Send } from "lucide-react"
 import { ChatBackground } from "./chat-background"
+import { AnimatedLocation } from "./animated-location"
 import { ChatMessage } from "./chat-message"
 import { SuggestionChips } from "./suggestion-chips"
 import { TypingIndicator } from "./typing-indicator"
@@ -84,9 +85,14 @@ export function ChatInterface() {
           <div className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#07070e]" />
         </div>
 
-        <div className="text-center">
-          <h1 className="text-white font-semibold text-base leading-tight">Rivky Riyantoro</h1>
-          <p className="text-white/35 text-xs mt-0.5">Jakarta / Jogja, Indonesia</p>
+        <div className="text-center space-y-1">
+          <h1 className="text-white font-bold text-[17px] tracking-tight leading-none">
+            Rivky{" "}
+            <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+              Riyantoro
+            </span>
+          </h1>
+          <AnimatedLocation />
         </div>
       </motion.div>
 
