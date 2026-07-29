@@ -7,6 +7,7 @@ import { ContentProjects } from "./content-projects"
 import { ContentSkills } from "./content-skills"
 import { ContentCertifications } from "./content-certifications"
 import { ContentContact } from "./content-contact"
+import { ContentCv } from "./content-cv"
 
 interface Props {
   message: ChatMessageType
@@ -46,6 +47,7 @@ export function ChatMessage({ message }: Props) {
             {message.contentType === "skills" && <ContentSkills />}
             {message.contentType === "certifications" && <ContentCertifications />}
             {message.contentType === "contact" && <ContentContact />}
+            {message.contentType === "cv" && <ContentCv />}
           </div>
         )}
       </div>

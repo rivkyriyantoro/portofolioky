@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Send } from "lucide-react"
 import { ChatBackground } from "./chat-background"
-import { CvDownload } from "./cv-download"
 import { ChatMessage } from "./chat-message"
 import { SuggestionChips } from "./suggestion-chips"
 import { TypingIndicator } from "./typing-indicator"
@@ -89,7 +88,6 @@ export function ChatInterface() {
           <h1 className="text-white font-semibold text-base leading-tight">Rivky Riyantoro</h1>
           <p className="text-white/35 text-xs mt-0.5">Jakarta / Jogja, Indonesia</p>
         </div>
-        <CvDownload />
       </motion.div>
 
       {/* Chat window */}
