@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Send } from "lucide-react"
+import { ChatBackground } from "./chat-background"
 import { ChatMessage } from "./chat-message"
 import { SuggestionChips } from "./suggestion-chips"
 import { TypingIndicator } from "./typing-indicator"
@@ -16,7 +17,7 @@ import {
 const WELCOME: ChatMessageType = {
   id: "0",
   role: "bot",
-  text: "Halo! Saya adalah asisten AI **Rivky Riyantoro** 👋\n\nTanyakan apa saja tentang Rivky — pengalaman kerja, proyek, skill, sertifikasi, atau cara menghubunginya. Pilih topik di bawah atau ketik langsung!",
+  text: "Halo! Saya adalah asisten AI **Rivky Riyantoro** 👋\n\nTanyakan apa saja — pengalaman kerja, proyek, skill, sertifikasi, atau cara menghubunginya. Pilih topik di bawah atau ketik langsung!",
   timestamp: new Date(),
 }
 
@@ -62,57 +63,77 @@ export function ChatInterface() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-[#08080f]">
-      {/* Header */}
-      <div className="shrink-0 flex items-center gap-3 px-5 py-3.5 border-b border-white/8 bg-[#0d0d18]/80 backdrop-blur-sm">
+    <div className="relative h-screen overflow-hidden flex flex-col items-center px-4 pt-6 pb-4">
+      <ChatBackground />
+
+      {/* Avatar + Identity */}
+      <motion.div
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative z-10 flex flex-col items-center gap-2 mb-4 shrink-0"
+      >
+        {/* Avatar ring glow */}
         <div className="relative">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">
-            RR
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 blur-lg opacity-50 scale-110" />
+          <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-[2px] shadow-2xl">
+            <div className="w-full h-full rounded-full bg-[#07070e] flex items-center justify-center">
+              <span className="text-white font-bold text-xl tracking-tight">RR</span>
+            </div>
           </div>
-          <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#0d0d18]" />
+          <div className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#07070e]" />
         </div>
-        <div>
-          <p className="text-white font-semibold text-sm leading-none">Rivky AI</p>
-          <p className="text-emerald-400 text-xs mt-0.5">Online</p>
-        </div>
-        <div className="ml-auto text-right hidden sm:block">
-          <p className="text-white/30 text-xs">QA Engineer · Frontend Dev · UI/UX Designer</p>
-          <p className="text-white/20 text-xs">Yogyakarta, Indonesia</p>
-        </div>
-      </div>
 
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10">
-        <AnimatePresence initial={false}>
-          {messages.map((msg) => (
-            <ChatMessage key={msg.id} message={msg} />
-          ))}
-        </AnimatePresence>
-        {isTyping && <TypingIndicator />}
-        <div ref={bottomRef} />
-      </div>
-
-      {/* Input area */}
-      <div className="shrink-0 px-4 pb-5 pt-3 border-t border-white/8 bg-[#0d0d18]/80 backdrop-blur-sm space-y-3">
-        <SuggestionChips suggestions={suggestions} onSelect={handleSend} />
-        <div className="flex gap-2">
-          <input
-            ref={inputRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
-            placeholder="Ketik pertanyaan tentang Rivky..."
-            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-all"
-          />
-          <button
-            onClick={() => handleSend(input)}
-            disabled={!input.trim() || isTyping}
-            className="w-11 h-11 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-all shrink-0"
-          >
-            <Send className="w-4 h-4 text-white" />
-          </button>
+        <div className="text-center">
+          <h1 className="text-white font-semibold text-base leading-tight">Rivky Riyantoro</h1>
+          <p className="text-white/35 text-xs mt-0.5">QA Engineer · Frontend Dev · UI/UX Designer</p>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Chat window */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+        className="relative z-10 w-full max-w-2xl flex-1 flex flex-col min-h-0 rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+        style={{ background: "rgba(10, 10, 20, 0.65)", backdropFilter: "blur(24px)" }}
+      >
+        {/* Messages area */}
+        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 scrollbar-thin">
+          <AnimatePresence initial={false}>
+            {messages.map((msg) => (
+              <ChatMessage key={msg.id} message={msg} />
+            ))}
+          </AnimatePresence>
+          {isTyping && <TypingIndicator />}
+          <div ref={bottomRef} />
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-white/8 shrink-0" />
+
+        {/* Input area */}
+        <div className="px-4 pt-3 pb-4 space-y-2.5 shrink-0">
+          <SuggestionChips suggestions={suggestions} onSelect={handleSend} />
+          <div className="flex gap-2">
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
+              placeholder="Ketik pertanyaan tentang Rivky..."
+              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-all"
+            />
+            <button
+              onClick={() => handleSend(input)}
+              disabled={!input.trim() || isTyping}
+              className="w-10 h-10 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-30 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-all shrink-0"
+            >
+              <Send className="w-3.5 h-3.5 text-white" />
+            </button>
+          </div>
+        </div>
+      </motion.div>
     </div>
   )
 }
