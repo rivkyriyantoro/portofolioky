@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Send } from "lucide-react"
 import { ChatBackground } from "./chat-background"
+import { CvDownload } from "./cv-download"
 import { ChatMessage } from "./chat-message"
 import { SuggestionChips } from "./suggestion-chips"
 import { TypingIndicator } from "./typing-indicator"
@@ -17,7 +18,7 @@ import {
 const WELCOME: ChatMessageType = {
   id: "0",
   role: "bot",
-  text: "Halo! Saya adalah asisten AI **Rivky Riyantoro** 👋\n\nTanyakan apa saja — pengalaman kerja, proyek, skill, sertifikasi, atau cara menghubunginya. Pilih topik di bawah atau ketik langsung!",
+  text: "Hey there! I'm **Rivky Riyantoro's** AI assistant 👋\n\nFeel free to ask anything — work experience, projects, skills, certifications, or how to get in touch. Pick a topic below or just type away!",
   timestamp: new Date(),
 }
 
@@ -88,6 +89,7 @@ export function ChatInterface() {
           <h1 className="text-white font-semibold text-base leading-tight">Rivky Riyantoro</h1>
           <p className="text-white/35 text-xs mt-0.5">Jakarta / Jogja, Indonesia</p>
         </div>
+        <CvDownload />
       </motion.div>
 
       {/* Chat window */}
@@ -121,7 +123,7 @@ export function ChatInterface() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
-              placeholder="Ketik pertanyaan tentang Rivky..."
+              placeholder="Ask something about Rivky..."
               className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-indigo-500/60 focus:bg-white/7 transition-all"
             />
             <button

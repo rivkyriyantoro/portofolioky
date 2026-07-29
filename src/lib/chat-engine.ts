@@ -30,30 +30,31 @@ export interface BotResponse {
 }
 
 export const DEFAULT_SUGGESTIONS = [
-  "Tentang Rivky",
-  "Pengalaman Kerja",
-  "Proyek Portfolio",
-  "Skill & Tools",
-  "Sertifikasi",
-  "Cara Menghubungi",
+  "About Rivky",
+  "Work Experience",
+  "Portfolio Projects",
+  "Skills & Tools",
+  "Certifications",
+  "Get in Touch",
 ]
 
 const intentMap: Record<string, Intent> = {
-  halo: "greeting", hi: "greeting", hello: "greeting", hay: "greeting",
-  hey: "greeting", hai: "greeting", selamat: "greeting",
-  tentang: "about", about: "about", siapa: "about", who: "about",
-  rivky: "about", bio: "about", profil: "about",
-  pengalaman: "experience", experience: "experience", kerja: "experience",
-  riwayat: "experience", karir: "experience", career: "experience",
-  pekerjaan: "experience", job: "experience", work: "experience",
-  proyek: "projects", project: "projects", portfolio: "projects",
-  karya: "projects", projek: "projects",
-  skill: "skills", keahlian: "skills", kemampuan: "skills",
-  tools: "skills", teknologi: "skills", tech: "skills", dikuasai: "skills",
+  // English
+  about: "about", who: "about", bio: "about", profile: "about",
+  experience: "experience", work: "experience", career: "experience", job: "experience",
+  project: "projects", projects: "projects", portfolio: "projects",
+  skill: "skills", skills: "skills", tools: "skills", tech: "skills", technologies: "skills",
+  cert: "certifications", certs: "certifications", certification: "certifications", certifications: "certifications",
+  contact: "contact", email: "contact", reach: "contact", hire: "contact", touch: "contact",
+  hello: "greeting", hi: "greeting", hey: "greeting",
+  // Indonesian fallback
+  tentang: "about", siapa: "about", rivky: "about",
+  pengalaman: "experience", kerja: "experience", riwayat: "experience", karir: "experience",
+  proyek: "projects", projek: "projects",
+  keahlian: "skills", kemampuan: "skills", teknologi: "skills",
   sertifikat: "certifications", sertifikasi: "certifications",
-  cert: "certifications", certification: "certifications", lisensi: "certifications",
-  kontak: "contact", contact: "contact", hubungi: "contact",
-  email: "contact", reach: "contact", hire: "contact", rekrut: "contact",
+  kontak: "contact", hubungi: "contact",
+  halo: "greeting", hai: "greeting",
 }
 
 export function detectIntent(input: string): Intent {
@@ -68,47 +69,47 @@ export function generateResponse(intent: Intent): BotResponse {
   switch (intent) {
     case "greeting":
       return {
-        text: "Halo! Senang bertemu denganmu 👋 Saya adalah asisten AI Rivky. Ada yang ingin kamu ketahui? Pilih topik di bawah atau ketik langsung!",
+        text: "Hey there! Great to meet you 👋 I'm Rivky's AI assistant. Ask me anything about Rivky, or pick a topic below to get started!",
         suggestions: DEFAULT_SUGGESTIONS,
       }
     case "about":
       return {
-        text: "Rivky Riyantoro adalah seorang **Quality Assurance Engineer & Systems Analyst** berbasis di Yogyakarta, Indonesia.\n\nLulusan **Universitas Muhammadiyah Yogyakarta** jurusan Informatika dengan IPK 3.72 *(Cum Laude)*. Saat ini aktif bekerja di **Bank Sinarmas** dan **LAYANA.ID** sebagai QA Engineer, dengan pengalaman luas di software testing, UI/UX design, dan frontend development.",
-        suggestions: ["Pengalaman Kerja", "Proyek Portfolio", "Skill & Tools", "Cara Menghubungi"],
+        text: "Rivky Riyantoro is a **Quality Assurance Engineer & Systems Analyst** based in Jakarta / Yogyakarta, Indonesia.\n\nGraduated from **Muhammadiyah University of Yogyakarta** in Information Technology with a GPA of 3.72 *(Cum Laude)*. Currently working at **Bank Sinarmas** and **LAYANA.ID** as a QA Engineer, with extensive experience in software testing, UI/UX design, and frontend development.",
+        suggestions: ["Work Experience", "Portfolio Projects", "Skills & Tools", "Get in Touch"],
       }
     case "experience":
       return {
-        text: "Berikut riwayat pengalaman kerja Rivky:",
+        text: "Here's an overview of Rivky's work experience:",
         contentType: "experiences",
-        suggestions: ["Proyek Portfolio", "Skill & Tools", "Sertifikasi"],
+        suggestions: ["Portfolio Projects", "Skills & Tools", "Certifications"],
       }
     case "projects":
       return {
-        text: "Berikut proyek-proyek yang telah dikerjakan Rivky:",
+        text: "Here are the projects Rivky has worked on:",
         contentType: "projects",
-        suggestions: ["Pengalaman Kerja", "Skill & Tools", "Cara Menghubungi"],
+        suggestions: ["Work Experience", "Skills & Tools", "Get in Touch"],
       }
     case "skills":
       return {
-        text: "Berikut skill dan tools yang dikuasai Rivky:",
+        text: "Here are the skills and tools Rivky is proficient in:",
         contentType: "skills",
-        suggestions: ["Sertifikasi", "Proyek Portfolio", "Cara Menghubungi"],
+        suggestions: ["Certifications", "Portfolio Projects", "Get in Touch"],
       }
     case "certifications":
       return {
-        text: "Berikut sertifikasi yang dimiliki Rivky:",
+        text: "Here are Rivky's professional certifications:",
         contentType: "certifications",
-        suggestions: ["Skill & Tools", "Pengalaman Kerja", "Cara Menghubungi"],
+        suggestions: ["Skills & Tools", "Work Experience", "Get in Touch"],
       }
     case "contact":
       return {
-        text: "Tertarik untuk berkolaborasi dengan Rivky? Berikut cara menghubunginya:",
+        text: "Interested in working with Rivky? Here's how to get in touch:",
         contentType: "contact",
-        suggestions: ["Tentang Rivky", "Proyek Portfolio", "Pengalaman Kerja"],
+        suggestions: ["About Rivky", "Portfolio Projects", "Work Experience"],
       }
     default:
       return {
-        text: "Hmm, saya kurang memahami pertanyaanmu. Coba pilih salah satu topik berikut, atau ketik dengan kata kunci yang berbeda!",
+        text: "Hmm, I didn't quite catch that. Try picking a topic below or rephrase your question!",
         suggestions: DEFAULT_SUGGESTIONS,
       }
   }

@@ -3,13 +3,13 @@
 import { useState } from "react"
 import { featuredProjects } from "@/data/cms-content"
 
-const categories = ["Semua", "QA Testing", "UI/UX Design", "Web Development", "Project Management"]
+const categories = ["All", "QA Testing", "UI/UX Design", "Web Development", "Project Management"]
 
 export function ContentProjects() {
   const [active, setActive] = useState("Semua")
 
   const filtered =
-    active === "Semua"
+    active === "All"
       ? featuredProjects.filter((p) => p.featured)
       : featuredProjects.filter((p) => p.category === active)
 
@@ -65,7 +65,7 @@ export function ContentProjects() {
         ))}
         {filtered.length === 0 && (
           <p className="text-white/30 text-sm text-center py-4">
-            Belum ada proyek di kategori ini.
+            No projects in this category.
           </p>
         )}
       </div>

@@ -31,7 +31,7 @@ export function ContentExperience() {
             ))}
             {exp.technologies.length > 5 && (
               <span className="text-xs text-white/30 self-center">
-                +{exp.technologies.length - 5} lainnya
+                +{exp.technologies.length - 5} more
               </span>
             )}
           </div>
