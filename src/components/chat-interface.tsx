@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { Send } from "lucide-react"
 import { ChatBackground } from "./chat-background"
 import { AnimatedLocation } from "./animated-location"
+import { SplineAvatar } from "./spline-avatar"
 import { ChatMessage } from "./chat-message"
 import { SuggestionChips } from "./suggestion-chips"
 import { TypingIndicator } from "./typing-indicator"
@@ -89,20 +90,7 @@ export function ChatInterface() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="relative z-10 flex flex-col items-center gap-2 mb-4 shrink-0"
       >
-        <div className="relative">
-          {/* Breathing glow */}
-          <motion.div
-            className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 blur-xl"
-            animate={{ scale: [1.1, 1.5, 1.1], opacity: [0.45, 0.2, 0.45] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-[2px] shadow-2xl">
-            <div className="w-full h-full rounded-full bg-[#07070e] flex items-center justify-center">
-              <span className="text-white font-bold text-xl tracking-tight">RR</span>
-            </div>
-          </div>
-          <div className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#07070e]" />
-        </div>
+        <SplineAvatar />
 
         <div className="text-center space-y-1">
           <h1 className="text-white font-bold text-[17px] tracking-tight leading-none">
