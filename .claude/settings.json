@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(git -C /Users/rivky/code/portofolio/portofolioky log --oneline -8)",
-      "Bash(git -C /Users/rivky/code/portofolio/portofolioky commit -m ' *)"
+      "Bash(git -C /Users/rivky/code/portofolio/portofolioky commit -m ' *)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s \"https://reactbits.dev/animations/splash-cursor\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/content/Animations/SplashCursor/SplashCursor.jsx\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/content/Animations/SplashCursor/SplashCursor.jsx\" > /tmp/splash-cursor.jsx && wc -l /tmp/splash-cursor.jsx)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/content/Components/ProfileCard/ProfileCard.jsx\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/content/Components/ProfileCard/ProfileCard.tsx\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/content/Components/ProfileCard/ProfileCard.css\")",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   }
 }
