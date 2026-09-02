@@ -5,8 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { Send } from "lucide-react"
 import { ChatBackground } from "./chat-background"
 import { SplashCursor } from "./splash-cursor"
-import { AnimatedLocation } from "./animated-location"
-import { SplineAvatar } from "./spline-avatar"
+
 import { ProfileCard } from "./profile-card"
 import { ChatMessage } from "./chat-message"
 import { SuggestionChips } from "./suggestion-chips"
@@ -105,25 +104,6 @@ export function ChatInterface() {
 
       {/* ── Right side: mobile avatar (shown <lg) + chat ── */}
       <div className="relative z-10 flex flex-col flex-1 min-w-0 max-w-2xl h-full min-h-0 gap-3">
-
-        {/* Mobile avatar + identity — hidden on lg */}
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="lg:hidden flex flex-col items-center gap-2 shrink-0"
-        >
-          <SplineAvatar />
-          <div className="text-center space-y-1">
-            <h1 className="text-white font-bold text-[17px] tracking-tight leading-none">
-              Rivky{" "}
-              <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
-                Riyantoro
-              </span>
-            </h1>
-            <AnimatedLocation />
-          </div>
-        </motion.div>
 
         {/* Chat window */}
         <motion.div
