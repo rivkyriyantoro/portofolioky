@@ -23,11 +23,7 @@ export function ChatMessage({ message }: Props) {
       transition={{ duration: 0.25, ease: "easeOut" }}
       className={`flex gap-3 ${isBot ? "justify-start" : "justify-end"}`}
     >
-      {isBot && (
-        <div className="w-8 h-8 shrink-0 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs mt-1">
-          RR
-        </div>
-      )}
+
 
       <div className={`space-y-2 ${isBot ? "max-w-[85%]" : "max-w-[70%]"}`}>
         <div

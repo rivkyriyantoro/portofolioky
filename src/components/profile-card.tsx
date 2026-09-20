@@ -239,14 +239,7 @@ function ProfileCardComponent({
               {showUserInfo && (
                 <div className="pc-user-info">
                   <div className="pc-user-details">
-                    <div className="pc-mini-avatar">
-                      <img
-                        src={miniAvatarUrl || avatarUrl || ""}
-                        alt={`${name} mini`}
-                        loading="lazy"
-                        onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0.4" }}
-                      />
-                    </div>
+
                     <div className="pc-user-text">
                       <div className="pc-handle">@{handle}</div>
                       <div className="pc-status">{status}</div>
