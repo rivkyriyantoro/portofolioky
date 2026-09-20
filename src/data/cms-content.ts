@@ -3,10 +3,10 @@ import { CMSContent, WorkExperience, FeaturedProject } from "@/types/cms"
 export const workExperiences: WorkExperience[] = [
   {
     id: "exp-000",
-    title: "Quality Assurance",
+    title: "Software Quality Assurance",
     company: "Bank Sinarmas",
     location: "Indonesia",
-    period: "January 2026 - Present",
+    period: "October 2024 - Present",
     isCurrentPosition: true,
     description: "Responsible for quality assurance in banking software systems, ensuring robust and secure digital banking products through comprehensive testing strategies and quality standards.",
     technologies: ["Postman", "Playwright", "Manual Testing", "API Testing", "JIRA", "DBeaver"],
@@ -28,7 +28,7 @@ export const workExperiences: WorkExperience[] = [
     title: "Quality Assurance",
     company: "LAYANA.ID",
     location: "Yogyakarta, Indonesia",
-    period: "August 2024 - Present",
+    period: "August 2024 - October 2024",
     description: "Responsible for ensuring quality standards in software development processes, performing comprehensive testing of web applications and mobile applications to deliver high-quality products.",
     technologies: ["Selenium", "Postman", "TestNG", "JIRA", "Manual Testing", "API Testing", "Mobile Testing"],
     achievements: [
@@ -47,7 +47,7 @@ export const workExperiences: WorkExperience[] = [
   },
   {
     id: "exp-002",
-    title: "Frontend and Quality Assurance",
+    title: "Software Developer and Quality Assurance",
     company: "HRH Synergy Nusantara Tech",
     location: "Yogyakarta, Indonesia",
     period: "November 2024 - January 2025",
@@ -936,6 +936,36 @@ export const featuredProjects: FeaturedProject[] = [
       "POS system testing methodologies",
       "Retail transaction optimization",
       "Business operation automation"
+    ]
+  },
+  {
+    id: "proj-026",
+    title: "Foundry EduLoan Workshop - Mantle Network",
+    description: "Developed and tested EduLoan smart contracts on the Mantle Network testnet using the Foundry development toolchain. Implemented comprehensive unit testing, deployment scripts, fuzz testing, and contract verification for educational loan DeFi mechanics.",
+    shortDescription: "EduLoan smart contracts testing and deployment with Foundry on Mantle Network",
+    image: "/images/projects/eduloan.png",
+    technologies: ["Solidity", "Foundry", "Mantle Network", "Smart Contracts", "DeFi", "Forge"],
+    category: "Blockchain",
+    liveUrl: "https://docs.ethjkt.com/docs/Mantle-Co-Learning-Camp/foundry-eduloan/foundry-eduloan-workshop",
+    featured: true,
+    status: "completed",
+    startDate: "2024-05-01",
+    endDate: "2024-06-01",
+    highlights: [
+      "EduLoan smart contract implementation and architecture",
+      "Automated unit and fuzz testing using Foundry Forge",
+      "Deployment and contract verification on Mantle Sepolia testnet",
+      "Gas optimization and security analysis"
+    ],
+    challenges: [
+      "Handling educational loan repayment schedules in Solidity",
+      "Simulating multi-party loan scenarios with Forge tests",
+      "Mantle Layer 2 testnet configuration and deployment"
+    ],
+    learnings: [
+      "Foundry framework workflows (forge, cast, anvil)",
+      "Mantle Network L2 ecosystem and deployment",
+      "DeFi lending protocols and smart contract testing"
     ]
   }
 ]

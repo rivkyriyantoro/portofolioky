@@ -89,7 +89,7 @@ export function generateResponse(intent: Intent): BotResponse {
       }
     case "about":
       return {
-        text: "So, Rivky is a **QA Engineer & Systems Analyst** who splits time between Jakarta and Yogyakarta. 📍\n\nGraduated *cum laude* from **Muhammadiyah University of Yogyakarta** (GPA 3.72) 🎓 and has been deep in the world of software quality, UI/UX design, and frontend dev ever since. Right now actively working at **Bank Sinarmas** and **LAYANA.ID**. 🚀",
+        text: "So, Rivky is a **QA Engineer & Systems Analyst** who splits time between Jakarta and Yogyakarta. 📍\n\nGraduated *cum laude* from **Muhammadiyah University of Yogyakarta** (GPA 3.72) 🎓 and has been deep in the world of software quality, UI/UX design, and frontend dev ever since. Right now actively working at **Bank Sinarmas**. 🚀",
         suggestions: ["💼 Work Experience", "📁 Portfolio Projects", "🛠️ Skills & Tools", "📄 Download CV", "📬 Get in Touch"],
       }
     case "experience":

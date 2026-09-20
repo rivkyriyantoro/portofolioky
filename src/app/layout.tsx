@@ -6,7 +6,7 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 
 export const metadata: Metadata = {
   title: "Rivky Riyantoro — Portfolio",
-  description: "QA Engineer · Frontend Developer · UI/UX Designer based in Yogyakarta, Indonesia.",
+  description: "QA Engineer · Software Developer · UI/UX based in Yogyakarta, Indonesia.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

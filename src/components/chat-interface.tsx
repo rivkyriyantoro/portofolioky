@@ -92,11 +92,11 @@ export function ChatInterface() {
           avatarUrl="/avatar.png"
           miniAvatarUrl="/avatar.png"
           name="Rivky Riyantoro"
-          title="QA Engineer · Frontend Dev · UI/UX Designer"
+          title="QA Engineer · System Analyst · UI/UX"
           handle="rivkyriyantoro"
           status="Open to Opportunities ✨"
           contactText="Get in Touch"
-          onContactClick={() => window.open("mailto:hrhcorporation@gmail.com")}
+          onContactClick={() => window.open("mailto:rivkyriyant@gmail.com")}
           behindGlowColor="rgba(99, 102, 241, 0.45)"
           behindGlowSize="48%"
         />

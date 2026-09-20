@@ -31,18 +31,19 @@ export interface FeaturedProject {
   learnings?: string[]
 }
 
-export type ProjectCategory = 
-  | "Full Stack" 
-  | "Frontend" 
-  | "Backend" 
-  | "Mobile" 
-  | "DevOps" 
+export type ProjectCategory =
+  | "Full Stack"
+  | "Frontend"
+  | "Backend"
+  | "Mobile"
+  | "DevOps"
   | "Machine Learning"
   | "Design"
   | "QA Testing"
   | "UI/UX Design"
   | "Web Development"
   | "Project Management"
+  | "Blockchain"
 
 export type ProjectStatus = 
   | "completed" 
