@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const cvOptions = [
   { label: "QA Engineer", file: "/cv/cv-qa-engineer.pdf", emoji: "🧪" },
-  { label: "Frontend Developer", file: "/cv/cv-frontend-developer.pdf", emoji: "💻" },
+  { label: "Software Developer", file: "/cv/cv-frontend-developer.pdf", emoji: "💻" },
   { label: "UI/UX Designer", file: "/cv/cv-uiux-designer.pdf", emoji: "🎨" },
 ]
 

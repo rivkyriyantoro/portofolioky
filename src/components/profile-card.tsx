@@ -50,7 +50,7 @@ function ProfileCardComponent({
   className = "",
   enableTilt = true,
   name = "Rivky Riyantoro",
-  title = "QA Engineer · Frontend Dev · UI/UX Designer",
+  title = "QA Engineer · Software Developer · UI/UX Designer",
   handle = "rivkyriyantoro",
   status = "Open to Opportunities ✨",
   contactText = "Get in Touch",
@@ -229,7 +229,7 @@ function ProfileCardComponent({
                   <div className="pc-monogram">RR</div>
                   <div className="pc-role-chips">
                     <div className="pc-chip">QA Engineer</div>
-                    <div className="pc-chip">Frontend Dev</div>
+                    <div className="pc-chip">Software Developer</div>
                     <div className="pc-chip">UI/UX Designer</div>
                   </div>
                 </div>

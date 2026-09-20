@@ -89,7 +89,7 @@ export function generateResponse(intent: Intent): BotResponse {
       }
     case "about":
       return {
-        text: "So, Rivky is a **QA Engineer & Systems Analyst** who splits time between Jakarta and Yogyakarta. 📍\n\nGraduated *cum laude* from **Muhammadiyah University of Yogyakarta** (GPA 3.72) 🎓 and has been deep in the world of software quality, UI/UX design, and frontend dev ever since. Right now actively working at **Bank Sinarmas**. 🚀",
+        text: "Software Engineer and QA Automation with 3+ years of experience. I specialize in building and testing reliable systems across banking, fintech, and diverse software projects.\n\nMy focus is on building reliable systems faster by actively integrating AI into the software testing and analysis lifecycle. I don't just explore AI adoption; I implement it to drive QA efficiency. My recent work involves developing custom AI-powered tools for automated framework migrations and integrating intelligent workflows to significantly accelerate test creation and complex API testing for financial systems.\n\nBuilding on my foundation in finance, I am currently expanding my technical scope into modern Fintech architectures, Blockchain fundamentals, and securities.\n\nI'm open to conversations, collaborations, and roles where quality engineering, applied AI, and modern financial infrastructure intersect. Let's connect.",
         suggestions: ["💼 Work Experience", "📁 Portfolio Projects", "🛠️ Skills & Tools", "📄 Download CV", "📬 Get in Touch"],
       }
     case "experience":
