@@ -940,12 +940,12 @@ export const featuredProjects: FeaturedProject[] = [
   },
   {
     id: "proj-026",
-    title: "Foundry EduLoan Workshop - Mantle Network",
-    description: "Developed and tested EduLoan smart contracts on the Mantle Network testnet using the Foundry development toolchain. Implemented comprehensive unit testing, deployment scripts, fuzz testing, and contract verification for educational loan DeFi mechanics.",
-    shortDescription: "EduLoan smart contracts testing and deployment with Foundry on Mantle Network",
+    title: "EduLoan - Mantle Network",
+    description: "Developed and deployed EduLoan smart contracts on Mantle Network. Features educational loan DeFi mechanics, automated loan disbursement, repayment schedules, and contract testing using Foundry.",
+    shortDescription: "EduLoan DeFi smart contracts and web platform deployed on Mantle Network",
     image: "/images/projects/eduloan.png",
-    technologies: ["Solidity", "Foundry", "Mantle Network", "Smart Contracts", "DeFi", "Forge"],
-    category: "Blockchain",
+    technologies: ["Solidity", "Foundry", "Mantle Network", "Smart Contracts", "DeFi", "Web3"],
+    category: "Web Development",
     liveUrl: "https://docs.ethjkt.com/docs/Mantle-Co-Learning-Camp/foundry-eduloan/foundry-eduloan-workshop",
     featured: true,
     status: "completed",
@@ -966,6 +966,64 @@ export const featuredProjects: FeaturedProject[] = [
       "Foundry framework workflows (forge, cast, anvil)",
       "Mantle Network L2 ecosystem and deployment",
       "DeFi lending protocols and smart contract testing"
+    ]
+  },
+  {
+    id: "proj-027",
+    title: "Organization Election DApp - Arbitrum",
+    description: "Decentralized voting application (DApp) for organizational leadership elections built on Arbitrum. Implemented tamper-proof voting smart contracts, transparent tallying, role-based voter authorization, and frontend integration.",
+    shortDescription: "Decentralized election voting DApp and governance smart contracts on Arbitrum L2",
+    image: "/images/projects/digital-transformation.png",
+    technologies: ["Solidity", "Arbitrum", "Smart Contracts", "Ethers.js", "React", "Web3"],
+    category: "Web Development",
+    featured: true,
+    status: "completed",
+    startDate: "2024-06-01",
+    endDate: "2024-08-01",
+    highlights: [
+      "Secure and immutable ballot smart contract design",
+      "Low-gas voting transactions using Arbitrum Layer 2",
+      "Anti-double-voting validation and role-based voter registration",
+      "Real-time election results via Web3 frontend"
+    ],
+    challenges: [
+      "Ensuring voter anonymity while maintaining voter verification",
+      "Optimizing gas usage for batch voter registration",
+      "Handling transaction state updates on L2"
+    ],
+    learnings: [
+      "Arbitrum rollup architecture and deployment mechanics",
+      "Decentralized governance and voting smart contract patterns",
+      "Web3 frontend integration with wallet providers"
+    ]
+  },
+  {
+    id: "proj-028",
+    title: "Building Parking Payment Smart Contract - Ethereum",
+    description: "Automated parking payment system backed by Ethereum smart contracts. Calculates parking duration and tariffs automatically, processes on-chain payments, and issues verifiable digital parking passes.",
+    shortDescription: "Ethereum-based building parking payment and automated tariff smart contract",
+    image: "/images/projects/inventory-system.png",
+    technologies: ["Solidity", "Ethereum", "Smart Contracts", "Hardhat", "Web3.js", "Next.js"],
+    category: "Web Development",
+    featured: true,
+    status: "completed",
+    startDate: "2024-08-01",
+    endDate: "2024-10-01",
+    highlights: [
+      "Automated time-based parking fee calculation smart contract",
+      "Secure ETH payment escrow and instant checkout flow",
+      "Verifiable on-chain parking receipt/pass token generation",
+      "Comprehensive test coverage using Hardhat framework"
+    ],
+    challenges: [
+      "Accurate block timestamp handling for parking duration calculation",
+      "Secure refund handling for overpayment and tariff adjustments",
+      "Minimizing gas costs during peak parking check-in/out"
+    ],
+    learnings: [
+      "Smart contract payment lifecycle and escrow design",
+      "Hardhat testing, simulation, and gas reporting",
+      "Real-world IoT and Web3 payment integration patterns"
     ]
   }
 ]
