@@ -1024,6 +1024,64 @@ export const featuredProjects: FeaturedProject[] = [
       "Hardhat testing, simulation, and gas reporting",
       "Real-world IoT and Web3 payment integration patterns"
     ]
+  },
+  {
+    id: "proj-029",
+    title: "Tembi Historical Home - Heritage Hotel Platform",
+    description: "Developed a bilingual web-based heritage hotel and cultural tourism platform utilizing Next.js, TypeScript, and Tailwind CSS. Built custom admin CMS for room booking, venue reservations, event management, and integrated Xendit payment gateway.",
+    shortDescription: "Bilingual heritage hotel booking and cultural venue reservation platform with Xendit integration",
+    image: "/images/projects/school-website.png",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MySQL", "Xendit", "REST API"],
+    category: "Web Development",
+    featured: true,
+    status: "completed",
+    startDate: "2023-08-01",
+    endDate: "2023-12-01",
+    highlights: [
+      "Bilingual guest booking flow with real-time room availability calendar",
+      "Seamless Xendit payment gateway integration for automated booking confirmation",
+      "Custom admin dashboard for room pricing, package offerings, and venue management",
+      "Responsive design optimized for international tourists and mobile visitors"
+    ],
+    challenges: [
+      "Managing bilingual content synchronization across room catalogs and events",
+      "Handling real-time booking reservation locks to prevent overbooking",
+      "Optimizing image-heavy cultural heritage assets for fast web load times"
+    ],
+    learnings: [
+      "Hospitality booking workflow and payment escrow architectures",
+      "Next.js server-side rendering for localized SEO and performance",
+      "Payment gateway webhook verification and automated booking state handling"
+    ]
+  },
+  {
+    id: "proj-030",
+    title: "Loista - Company Profile & Business Management",
+    description: "Developed a modern company profile and business catalog platform using Laravel and React.js. Implemented dynamic product showcases, inventory inquiry tracking, company portfolio presentation, and smooth inquiry workflows.",
+    shortDescription: "Corporate company profile and dynamic product catalog platform built with Laravel and React",
+    image: "/images/projects/corporate-portfolio.png",
+    technologies: ["Laravel", "React.js", "MySQL", "Tailwind CSS", "REST API", "PHP"],
+    category: "Web Development",
+    featured: true,
+    status: "completed",
+    startDate: "2023-04-01",
+    endDate: "2023-07-01",
+    highlights: [
+      "Interactive corporate presentation and product catalog browsing experience",
+      "CMS admin module for easy content, service, and inventory showcase updates",
+      "Direct customer inquiry and lead capture pipeline integration",
+      "Fast rendering and SEO optimization for corporate branding"
+    ],
+    challenges: [
+      "Designing a clean UI that accommodates diverse industrial product specifications",
+      "Ensuring responsive layout fidelity across complex multi-tier service catalogs",
+      "Balancing high-resolution showcase media with minimal page load latency"
+    ],
+    learnings: [
+      "Corporate brand storytelling through interactive UI/UX architecture",
+      "Laravel RESTful API design paired with modern React frontend components",
+      "Client CMS customization and non-technical admin user onboarding"
+    ]
   }
 ]
 
