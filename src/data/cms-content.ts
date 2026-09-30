@@ -47,20 +47,19 @@ export const workExperiences: WorkExperience[] = [
   },
   {
     id: "exp-002",
-    title: "Software Developer and Quality Assurance",
+    title: "Software Engineer and Quality Assurance",
     company: "HRH Synergy Nusantara Tech",
     location: "Yogyakarta, Indonesia",
-    period: "November 2024 - January 2025",
-    description: "Dual role focusing on frontend development and quality assurance, ensuring both development excellence and comprehensive testing coverage for client projects.",
-    technologies: ["React", "JavaScript", "CSS3", "HTML5", "Selenium", "Cypress", "Jest", "Git"],
+    period: "11/2024 – 01/2025",
+    description: "Dual role focusing on software engineering and quality assurance, ensuring both development excellence and comprehensive testing coverage for client projects.",
+    technologies: ["React", "TypeScript", "Node.js", "Jest", "Git", "Playwright"],
     achievements: [
-      "Successfully balanced frontend development and QA responsibilities",
-      "Delivered pixel-perfect UI implementations with thorough testing",
-      "Established testing protocols for frontend components",
-      "Improved code quality through comprehensive testing strategies"
+      "Successfully balanced software engineering and QA responsibilities",
+      "Delivered features on time with zero critical defects",
+      "Established testing protocols for software components"
     ],
     responsibilities: [
-      "Frontend development using React and modern web technologies",
+      "Software engineering using React and modern web technologies",
       "Component testing and UI/UX validation",
       "Cross-browser compatibility testing",
       "Responsive design implementation and testing",
@@ -521,89 +520,89 @@ export const featuredProjects: FeaturedProject[] = [
   // Project Management Projects
   {
     id: "proj-012",
-    title: "Digital Transformation Project Management",
-    description: "Assistant Project Manager for a comprehensive digital transformation initiative, coordinating multiple teams, managing project timelines, and ensuring successful delivery of digital solutions across organizational departments.",
-    shortDescription: "Digital transformation project coordination and management",
-    image: "/images/projects/digital-transformation.png",
-    technologies: ["Jira", "Confluence", "Notion", "Whimsical", "Slack", "Microsoft Project"],
+    title: "Premi Air - Assistant Project Manager & QA",
+    description: "Served as Assistant Project Manager and Quality Assurance Lead for the Premi Air multi-platform airline operations suite (FMS, CMS, Crew Portal, Aircraft Portal). Coordinated cross-functional development across Laravel and React Native stacks, managed sprint deliverables, aligned flight tracking API integrations, and spearheaded delivery quality.",
+    shortDescription: "Airline operations suite coordination, sprint tracking, and multi-platform delivery management",
+    image: "/images/projects/premi-air.png",
+    technologies: ["Jira", "Whimsical", "Postman", "Notion", "Slack", "Laravel", "React Native"],
     category: "Project Management",
     featured: true,
     status: "completed",
-    startDate: "2024-06-01",
-    endDate: "2024-12-31",
+    startDate: "2024-03-01",
+    endDate: "2024-09-30",
     highlights: [
-      "Multi-team coordination and management",
-      "Digital solution implementation oversight",
-      "Stakeholder communication management",
-      "Project timeline and milestone tracking"
+      "Cross-functional team coordination between backend, mobile, and airline stakeholders",
+      "Release planning and sprint tracking for Flight and Crew Management systems",
+      "End-to-end integration management with Radar Flight and Chatfy communication tools",
+      "Delivery quality oversight and milestone sign-offs"
     ],
     challenges: [
-      "Complex multi-departmental coordination",
-      "Digital transformation resistance management",
-      "Resource allocation optimization"
+      "Managing complex real-time flight tracking requirements across distributed teams",
+      "Coordinating tight release schedules across multiple operational portals",
+      "Bridging aviation domain logic between operational users and engineering teams"
     ],
     learnings: [
-      "Digital transformation methodologies",
-      "Advanced project management techniques",
-      "Change management strategies"
+      "Aviation domain project delivery and mission-critical release management",
+      "Multi-platform release coordination and stakeholder management",
+      "Agile backlog grooming for high-reliability systems"
     ]
   },
   {
     id: "proj-013",
-    title: "Agile Development Process Implementation",
-    description: "Led the implementation of Agile development processes across multiple development teams, establishing Scrum frameworks, sprint planning, and continuous improvement practices for enhanced project delivery.",
-    shortDescription: "Agile development process implementation and optimization",
-    image: "/images/projects/agile-implementation.png",
-    technologies: ["Jira", "Confluence", "Scrum", "Kanban", "Azure DevOps", "Slack"],
+    title: "Mobile LMS BPR CMA - Assistant Project Manager",
+    description: "Assistant Project Manager for BPR CMA's Mobile Loan Management System (LMS). Facilitated sprint planning, tracked feature development from loan origination to disbursement and repayment workflows, and coordinated technical validation across engineering and banking stakeholders.",
+    shortDescription: "Fintech Loan Management System project coordination, sprint management, and banking delivery",
+    image: "/images/projects/bpr-cma-lms.png",
+    technologies: ["Jira", "Confluence", "Notion", "Postman", "Whimsical", "Slack"],
     category: "Project Management",
-    featured: false,
+    featured: true,
     status: "completed",
-    startDate: "2024-03-01",
-    endDate: "2024-08-31",
+    startDate: "2024-04-01",
+    endDate: "2024-10-31",
     highlights: [
-      "Agile framework implementation",
-      "Team productivity improvement",
-      "Sprint planning optimization",
-      "Continuous improvement culture establishment"
+      "Sprint planning and backlog prioritization for core lending user journeys",
+      "Facilitated cross-functional collaboration between mobile developers, QA, and bank teams",
+      "Milestone tracking for secure loan application, credit scoring, and disbursement flows",
+      "Structured bug triage and pre-release acceptance coordination"
     ],
     challenges: [
-      "Team adaptation to Agile methodologies",
-      "Process standardization across teams",
-      "Metrics and KPI establishment"
+      "Balancing regulatory compliance requirements with fast-paced sprint deliverables",
+      "Managing scope changes during multi-party loan disbursement workflow integrations",
+      "Synchronizing mobile app release versions with core banking backend milestones"
     ],
     learnings: [
-      "Agile coaching and facilitation",
-      "Team performance optimization",
-      "Process improvement methodologies"
+      "Fintech and banking operational workflows and project governance",
+      "Risk assessment and defect triage in financial software rollouts",
+      "Client communication and stakeholder alignment in BPR financial domains"
     ]
   },
   {
     id: "proj-014",
-    title: "Cross-functional Team Coordination",
-    description: "Coordinated cross-functional teams including developers, designers, QA engineers, and stakeholders for multiple concurrent projects, ensuring effective communication, resource allocation, and project delivery.",
-    shortDescription: "Cross-functional team coordination and resource management",
-    image: "/images/projects/team-coordination.png",
-    technologies: ["Notion", "Whimsical", "Slack", "Microsoft Teams", "Trello", "Google Workspace"],
+    title: "E-commerce Sonus Hub - Assistant Project Manager & QA",
+    description: "Assistant Project Manager and QA coordinator for Sonus Hub, a B2B and B2G PWA electrical material ordering platform. Managed feature delivery roadmaps, coordinated AI chat assistant and Xendit payment integrations, and ensured delivery on time.",
+    shortDescription: "B2B/B2G e-commerce platform project coordination, AI integration roadmap, and release management",
+    image: "/images/projects/sonus-hub.png",
+    technologies: ["Jira", "Notion", "Whimsical", "Postman", "Slack", "Google Workspace"],
     category: "Project Management",
-    featured: false,
+    featured: true,
     status: "completed",
-    startDate: "2024-01-01",
-    endDate: "2024-11-30",
+    startDate: "2024-02-01",
+    endDate: "2024-08-31",
     highlights: [
-      "Cross-functional team leadership",
-      "Resource optimization and allocation",
-      "Communication workflow establishment",
-      "Project delivery improvement"
+      "Project roadmap and timeline execution for multi-vendor B2B procurement workflows",
+      "Coordinated third-party API milestones including Xendit payment gateways and AI chat",
+      "Organized sprint retrospectives, daily stand-ups, and sprint review demos",
+      "User acceptance testing (UAT) planning and stakeholder sign-off leadership"
     ],
     challenges: [
-      "Multi-disciplinary team coordination",
-      "Communication barrier resolution",
-      "Resource conflict management"
+      "Aligning multi-tier B2B purchase order approvals with automated checkout timelines",
+      "Managing deliverables across procurement inventory and payment gateway dependencies",
+      "Coordinating performance testing gates before government-scale procurement launch"
     ],
     learnings: [
-      "Cross-functional leadership skills",
-      "Team communication optimization",
-      "Resource management strategies"
+      "B2B/B2G procurement project lifecycle management",
+      "Third-party payment and AI service integration project planning",
+      "Stakeholder communication and UAT facilitation"
     ]
   },
 

@@ -9,9 +9,9 @@ const cvOptions = [
     color: "from-emerald-500/20 to-teal-500/20 border-emerald-500/20",
   },
   {
-    label: "Software Developer",
-    description: "React, Next.js, TypeScript & UI implementation",
-    file: "/cv/cv-frontend-developer.pdf",
+    label: "Software Engineer",
+    description: "React, Next.js, TypeScript & full-stack implementation",
+    file: "/cv/cv-software-engineer.pdf",
     emoji: "💻",
     color: "from-blue-500/20 to-cyan-500/20 border-blue-500/20",
   },

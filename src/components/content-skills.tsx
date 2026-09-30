@@ -5,7 +5,7 @@ const skillCategories = [
     skills: ["Playwright", "Appium", "Selenium", "K6", "Katalon", "Postman", "Swagger", "JIRA", "DBeaver", "Manual Testing", "API Testing"],
   },
   {
-    name: "Frontend",
+    name: "Software Engineer",
     emoji: "💻",
     skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
   },
